@@ -65,8 +65,8 @@ class Record:
     def remove_phone(self, phone):
         # Видаляємо запис. У разі його відсутності, обробляємо виняток.
         try:
-            del self.phones[phone]
-        except KeyError:
+            self.phones.remove(phone)
+        except ValueError:
             print(f"Cannoe remove phone. {phone} not found in record.")
 
 
